@@ -1,0 +1,29 @@
+{
+  "name": "@astaroid/workshop",
+  "version": "1.0.0",
+  "description": "A astaroid utility package to handle forging crystals and generating crystal color scheme and svg file",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "vitest",
+    "watch": "tsc --watch",
+    "build": "tsc --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astaroid/workshop.git"
+  },
+  "keywords": [
+    "astaroid",
+    "crystal",
+    "svg"
+  ],
+  "author": "astroid <astaroidgame@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/astaroid/workshop/issues"
+  },
+  "homepage": "https://github.com/astaroid/workshop#readme",
+  "devDependencies": {
+    "vitest": "^0.28.5"
+  }
+}
