@@ -1,6 +1,6 @@
 node_modules
 test
 src
-doc
+docs
 .github
 typedoc.json
