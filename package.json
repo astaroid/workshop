@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/astaroid/workshop#readme",
   "devDependencies": {
+    "typedoc": "^0.23.25",
     "vitest": "^0.28.5"
   }
 }
