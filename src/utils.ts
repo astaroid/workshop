@@ -109,7 +109,7 @@ export const toHSL = (hex:string): HSL => {
 }
 
 export const toHex = (hsl:HSL): string => {
-    let { saturation: s, hue: h, lightness: l } = hsl
+    let { saturation: s, hue: h, lightness: l } = HSLClamp(hsl)
     h /= 360
     s /= 100
     l /= 100
