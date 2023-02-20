@@ -6,6 +6,7 @@ on:
       - main
 jobs:
   testing-project:
+    name: test project
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
