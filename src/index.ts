@@ -8,7 +8,7 @@ import {
 import { CrystalSideColorSchemeDiff } from "./constants.js"
 
 /**
- * A function that return the svg file describing the crystal.
+ * A function that return a svg image format describing the crystal.
  * @param height The crystal height.
  * @param width The crystal width.
  */
@@ -41,7 +41,7 @@ export const colorMixer = (...colors:Array<string>): string|null => {
 }
 
 /**
- * Generate the color scheme for a crystal.
+ * Generate the color schemes for a crystal.
  * @param color The crystal color.
  */
 export const colorSchemer = (color:string): CrystalColorScheme => {
@@ -70,7 +70,6 @@ export const colorSchemer = (color:string): CrystalColorScheme => {
 /**
  * Create a crystal.
  * @param color The crystal color.
- * @returns `Crystal`, a function that takes `height` and `width` as parameter and return the svg string describing the crystal.
  */
 export const crystalGenerator = (color: string): Crystal => {
     let { background, side } = colorSchemer(color)
