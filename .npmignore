@@ -1,0 +1,6 @@
+node_modules
+test
+src
+doc
+.github
+typedoc.json
