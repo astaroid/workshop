@@ -5,7 +5,7 @@ A astaroid utility package to handle creating crystals and generating crystal co
 
 ## Badges
 
-![](https://img.shields.io/github/actions/workflow/status/astaroid/workshop/ci.yml?branch=main) ![](https://img.shields.io/github/package-json/v/astaroid/workshop) ![](https://img.shields.io/github/forks/astaroid/workshop) ![](https://img.shields.io/github/stars/astaroid/workshop) ![](https://img.shields.io/github/issues-pr/astaroid/workshop) ![](https://img.shields.io/github/issues/astaroid/workshop) ![](https://img.shields.io/bundlephobia/min/@astaroid/workshop) ![](https://img.shields.io/github/license/astaroid/workshop)
+![](https://img.shields.io/github/actions/workflow/status/astaroid/workshop/ci.yml?branch=main) ![](https://img.shields.io/github/package-json/v/astaroid/workshop) ![](https://img.shields.io/github/forks/astaroid/workshop) ![](https://img.shields.io/github/stars/astaroid/workshop) ![](https://img.shields.io/github/issues-pr/astaroid/workshop) ![](https://img.shields.io/github/issues/astaroid/workshop) ![](https://img.shields.io/bundlephobia/min/@astaroid/workshop)
 
 ## Installation
 
@@ -23,7 +23,7 @@ Install @astaroid/workshop with yarn
 
 ## Documentation
 
-[Documentation](https://linktodocumentation)
+[Documentation](https://astaroid.github.io/workshop/)
 
 
 ## Usage/Examples
