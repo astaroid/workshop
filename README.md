@@ -39,5 +39,5 @@ let redCrystallSvgImage = redCrystall(32, 32)
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT]([https://choosealicense.com/licenses/mit/](https://github.com/daniel-onyenwee/astaroid-workshop/blob/main/LICENSE.md))
 
