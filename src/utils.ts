@@ -5,15 +5,36 @@ export interface HSL {
 }
 
 export interface CrystalSideColorScheme {
+    /**
+     * The crystal bottom left side color.
+     */
     bottomLeft: string
+    /**
+     * The crystal top left side color.
+     */
     topLeft: string
+    /**
+     * The crystal bottom center side color.
+     */
     bottomCenter: string
+    /**
+     * The crystal top right side color.
+     */
     topRight: string
+    /**
+     * The crystal top center side color.
+     */
     topCenter: string
 }
 
 export interface CrystalColorScheme {
+    /**
+     * The crystal background color. 
+     */
     background: string
+    /**
+     * The crystal sides color scheme.
+     */
     side: CrystalSideColorScheme 
 }
 
@@ -38,6 +59,12 @@ const hue2rgb = (p:number, q:number, t:number): number => {
     return p
 }
 
+
+/**
+ * Clamp `HSL` color.
+ * @param hsl Color to clamp.
+ * @returns Clamped `HSL` color.
+ */
 export const HSLClamp = (hsl:HSL): HSL => {
     let { hue, saturation, lightness } = hsl
     
@@ -54,6 +81,11 @@ export const HSLClamp = (hsl:HSL): HSL => {
     }
 }
 
+/**
+ * Convert hexadecimal color format to `HSL` color format.
+ * @param hex hex color to convert.
+ * @returns `HSL` color format of`hex`.
+ */
 export const toHSL = (hex:string): HSL => {
     hex = hex.toLowerCase()
     
@@ -108,6 +140,12 @@ export const toHSL = (hex:string): HSL => {
     }
 }
 
+
+/**
+ * Convert `HSL` color format to hexadecimal color format.
+ * @param hsl `HSL` color to convert.
+ * @returns hexadecimal color format of `HSL`.
+ */
 export const toHex = (hsl:HSL): string => {
     let { saturation: s, hue: h, lightness: l } = HSLClamp(hsl)
     h /= 360
