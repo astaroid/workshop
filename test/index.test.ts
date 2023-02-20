@@ -7,8 +7,7 @@ import {
 import { 
     colorMixer, 
     colorSchemer,
-    crystalGenerator,
-    Crystal
+    crystalGenerator
 } from "../src/index.js"
 import { CrystalColorScheme } from "../src/utils.js"
 
