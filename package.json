@@ -1,8 +1,9 @@
 {
   "name": "@astaroid/workshop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A astaroid utility package to handle creating crystals and generating crystal color schemes and svg image",
   "main": "lib/index.js",
+  "type": "module",
   "scripts": {
     "test": "vitest",
     "watch": "tsc --watch",
