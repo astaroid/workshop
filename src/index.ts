@@ -16,7 +16,7 @@ export type Crystal = (height: number, width: number) => string
 
 /**
  * Mix crystals color together.
- * @param colors  The colors to mix.
+ * @param colors  `Hex` format of the crystal colors to mix.
  * @returns `Hex` format of the mixed color.
 */
 export const colorMixer = (...colors:Array<string>): string|null => {
@@ -42,7 +42,7 @@ export const colorMixer = (...colors:Array<string>): string|null => {
 
 /**
  * Generate the color schemes for a crystal.
- * @param color The crystal color.
+ * @param color `Hex` format of the crystal color..
  */
 export const colorSchemer = (color:string): CrystalColorScheme => {
     let background = color
@@ -69,7 +69,7 @@ export const colorSchemer = (color:string): CrystalColorScheme => {
 
 /**
  * Create a crystal.
- * @param color The crystal color.
+ * @param color `Hex` format of the crystal color.
  */
 export const crystalGenerator = (color: string): Crystal => {
     let { background, side } = colorSchemer(color)
