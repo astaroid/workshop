@@ -1,10 +1,11 @@
-import { 
-    toHSL, 
-    HSLClamp, 
+import {
+    toHSL,
+    HSLClamp,
     toHex,
     CrystalColorScheme,
     CrystalSideColorScheme
 } from "./utils.js"
+import Color from "color"
 import { CrystalSideColorSchemeDiff } from "./constants.js"
 
 /**
@@ -12,29 +13,29 @@ import { CrystalSideColorSchemeDiff } from "./constants.js"
  * @param height The crystal height.
  * @param width The crystal width.
  */
-export type Crystal = (height: number, width: number) => string
+export type Crystal = (height?: number, width?: number) => string
 
 /**
  * Mix crystals color together.
  * @param colors  `Hex` format of the crystal colors to mix.
  * @returns `Hex` format of the mixed color.
 */
-export const colorMixer = (...colors:Array<string>): string|null => {
+export const colorMixer = (...colors: Array<string>): string | null => {
     if (colors.length <= 0) {
         return null
     } else if (colors.length == 1) {
         return colors[0]
     } else if (colors.length > 2) {
-       return colors.reduce((color1, color2) => colorMixer(color1, color2) || "#000000")
+        return colors.reduce((color1, color2) => colorMixer(color1, color2) || "#000000")
     }
-    
+
     let color1HSL = toHSL(colors[0]),
         color2HSL = toHSL(colors[1])
 
     let mixedColor = HSLClamp({
-        hue: Math.round((color1HSL.hue + color2HSL.hue)/2.5),
-        saturation: Math.round((color1HSL.saturation + color2HSL.saturation)/2.5),
-        lightness: Math.round((color1HSL.lightness + color2HSL.lightness)/2.5)
+        hue: Math.round((color1HSL.hue + color2HSL.hue) / 2.5),
+        saturation: Math.round((color1HSL.saturation + color2HSL.saturation) / 2.5),
+        lightness: Math.round((color1HSL.lightness + color2HSL.lightness) / 2.5)
     })
 
     return toHex(mixedColor)
@@ -44,15 +45,15 @@ export const colorMixer = (...colors:Array<string>): string|null => {
  * Generate the color schemes for a crystal.
  * @param color `Hex` format of the crystal color..
  */
-export const colorSchemer = (color:string): CrystalColorScheme => {
+export const colorSchemer = (color: string): CrystalColorScheme => {
     let background = color
 
-    let crystalSide:Partial<CrystalSideColorScheme> = {}
-    
+    let crystalSide: Partial<CrystalSideColorScheme> = {}
+
     let backgroundHSL = toHSL(background)
 
     for (const s in CrystalSideColorSchemeDiff) {
-        let side =  s as keyof CrystalSideColorScheme
+        let side = s as keyof CrystalSideColorScheme
         let sideDiff = CrystalSideColorSchemeDiff[side]
         crystalSide[side] = toHex({
             hue: sideDiff.hue + backgroundHSL.hue,
@@ -72,7 +73,8 @@ export const colorSchemer = (color:string): CrystalColorScheme => {
  * @param color `Hex` format of the crystal color.
  */
 export const crystalGenerator = (color: string): Crystal => {
-    let { background, side } = colorSchemer(color)
+    let hexColorFormat = new Color(color).hex().toUpperCase()
+    let { background, side } = colorSchemer(hexColorFormat)
 
     let { topCenter, topLeft, topRight, bottomCenter, bottomLeft } = side
 
@@ -86,5 +88,5 @@ export const crystalGenerator = (color: string): Crystal => {
             .concat(`<path d="M24.0469 7.90015H16.0156V15.1978H29.8994C29.8972 15.1771 29.8741 15.1089 29.7989 15.0015C29.7049 14.8673 24.8164 8.35938 24.6992 8.19531C24.582 8.03125 24.3711 7.90015 24.0469 7.90015Z" fill="${topRight}"/>`)
             .concat(`<path d="M15.9999 7.8999L18.4299 11.5699L20.8599 15.2299H11.1399L13.5699 11.5699L15.9999 7.8999Z" fill="${topCenter}"/>`)
             .concat(`</svg>`)
-    ) 
+    )
 }
