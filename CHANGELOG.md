@@ -8,3 +8,7 @@
 
 - ✔ Set package to be ES module compatible.
 - 🔄 change comment for "colorMixer", "colorSchemer" and "crystalGenerator" functions.
+
+## v1.0.2 (2024-04-17)
+
+- ➕ Add support to generate crystal from color keyword and hex code.
