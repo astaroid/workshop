@@ -27,7 +27,11 @@
   },
   "homepage": "https://github.com/astaroid/workshop#readme",
   "devDependencies": {
+    "@types/color": "^3.0.6",
     "typedoc": "^0.23.25",
     "vitest": "^0.28.5"
+  },
+  "dependencies": {
+    "color": "^4.2.3"
   }
 }
