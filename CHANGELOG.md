@@ -12,3 +12,7 @@
 ## v1.0.2 (2024-04-17)
 
 - ➕ Add support to generate crystal from color keyword and hex code.
+
+## v1.0.3 (2024-04-17)
+
+- Fix error - generate crystal from color keyword not working.

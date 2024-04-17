@@ -1,6 +1,6 @@
 {
   "name": "@astaroid/workshop",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A astaroid utility package to handle creating crystals and generating crystal color schemes and svg image",
   "main": "lib/index.js",
   "type": "module",
@@ -8,7 +8,8 @@
     "test": "vitest",
     "watch": "tsc --watch",
     "build": "tsc --build",
-    "build-doc": "typedoc --options typedoc.json"
+    "docs": "typedoc --options typedoc.json",
+    "publish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
