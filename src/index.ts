@@ -5,6 +5,7 @@ import {
     CrystalColorScheme,
     CrystalSideColorScheme
 } from "./utils.js"
+import Color from "color"
 import { CrystalSideColorSchemeDiff } from "./constants.js"
 
 /**
@@ -12,7 +13,7 @@ import { CrystalSideColorSchemeDiff } from "./constants.js"
  * @param height The crystal height.
  * @param width The crystal width.
  */
-export type Crystal = (height: number, width: number) => string
+export type Crystal = (height?: number, width?: number) => string
 
 /**
  * Mix crystals color together.
@@ -72,7 +73,8 @@ export const colorSchemer = (color: string): CrystalColorScheme => {
  * @param color `Hex` format of the crystal color.
  */
 export const crystalGenerator = (color: string): Crystal => {
-    let { background, side } = colorSchemer(color)
+    let hexColorFormat = new Color(color).hex().toUpperCase()
+    let { background, side } = colorSchemer(hexColorFormat)
 
     let { topCenter, topLeft, topRight, bottomCenter, bottomLeft } = side
 
